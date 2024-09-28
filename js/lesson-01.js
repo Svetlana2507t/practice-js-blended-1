@@ -54,14 +54,32 @@
 //~ числа від max до min за спаданням
 //~ Додайте усі парні числа від min до max і поверніть результат з функції
 
-function logNumbers(min, max) {
-  let total = 0;
-  for (let i = max; i >= min; i--) {
-    console.log(i);
-    if (i % 2 === 0) {
-      total += i;
-    }
+// function logNumbers(min, max) {
+//   let total = 0;
+//   for (let i = max; i >= min; i--) {
+//     console.log(i);
+//     if (i % 2 === 0) {
+//       total += i;
+//     }
+//   }
+//   return total;
+// }
+// console.log(logNumbers(2, 6));
+
+// Напишіть функцію fizzBuzz яка приймає число
+//Якщо число ділитися на 3 повертати fizz
+//якщо ділитися на 5 повертати buzz
+//Якщо ділитися на 3 і на 5 повернути fizzbuzz
+
+function fizzBuzz(num) {
+  if (num % 3 === 0 && num % 5 === 0) {
+    return "fizzbuzz";
+  } else if (num % 5 === 0) {
+    return "buzz";
+  } else if (num % 3 === 0) {
+    return "fizz";
+  } else {
+    return num;
   }
-  return total;
 }
-console.log(logNumbers(2, 6));
+console.log(fizzBuzz(9));
