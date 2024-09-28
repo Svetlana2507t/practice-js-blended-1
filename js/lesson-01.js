@@ -21,30 +21,47 @@
 //~ '2' - 'весна' і так далі. Розв'яжіть завдання через switch-case.
 // let valueSeason = prompt("Введіть число від 1 до 4");
 
-function getSeason() {
-  let valueSeason = prompt("Введіть число від 1 до 4");
-  let result = "";
-  switch (Number(valueSeason)) {
-    case 1:
-      result = "Зима";
-      break;
+// function getSeason() {
+//   let valueSeason = prompt("Введіть число від 1 до 4");
+//   let result = "";
+//   switch (Number(valueSeason)) {
+//     case 1:
+//       result = "Зима";
+//       break;
 
-    case 2:
-      result = "Весна";
-      break;
+//     case 2:
+//       result = "Весна";
+//       break;
 
-    case 3:
-      result = "Літо";
-      break;
+//     case 3:
+//       result = "Літо";
+//       break;
 
-    case 4:
-      result = "Осінь";
-      break;
+//     case 4:
+//       result = "Осінь";
+//       break;
 
-    default:
-      result = " Вивчи пори року!";
+//     default:
+//       result = " Вивчи пори року!";
+//   }
+//   return result;
+// }
+
+// console.log(getSeason());
+
+//~ Створи функцію logNumbers яка приймає min і max
+//~ і виводить у консоль
+//~ числа від max до min за спаданням
+//~ Додайте усі парні числа від min до max і поверніть результат з функції
+
+function logNumbers(min, max) {
+  let total = 0;
+  for (let i = max; i >= min; i--) {
+    console.log(i);
+    if (i % 2 === 0) {
+      total += i;
+    }
   }
-  return result;
+  return total;
 }
-
-console.log(getSeason());
+console.log(logNumbers(2, 6));
