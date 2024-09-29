@@ -15,48 +15,71 @@
 // }
 
 // console.log(defineQuarter(59));
+
 //~ Напиши функцію яка запитує у користувача ведення числа  1, 2, 3 або 4. Якщо вона має
 //~ значення '1', то у змінну result запишемо 'зима', якщо має значення
 //~ '2' - 'весна' і так далі. Розв'яжіть завдання через switch-case.
 // let valueSeason = prompt("Введіть число від 1 до 4");
 
-// function getSeason(num) {
+// function getSeason() {
 //   let valueSeason = prompt("Введіть число від 1 до 4");
 //   let result = "";
 //   switch (Number(valueSeason)) {
 //     case 1:
-//       result = "Winter";
+//       result = "Зима";
 //       break;
+
 //     case 2:
-//       result = "Spring";
+//       result = "Весна";
 //       break;
+
 //     case 3:
-//       result = "Summer";
+//       result = "Літо";
 //       break;
+
 //     case 4:
-//       result = "Autumn";
+//       result = "Осінь";
 //       break;
+
 //     default:
-//       result = "You have entered invalid value";
+//       result = " Вивчи пори року!";
 //   }
 //   return result;
 // }
-// console.log(getSeason(4));
-// console.log(getSeason(3));
+
+// console.log(getSeason());
 
 //~ Створи функцію logNumbers яка приймає min і max
 //~ і виводить у консоль
 //~ числа від max до min за спаданням
 //~ Додайте усі парні числа від min до max і поверніть результат з функції
 
-function getEvenNumSum(min, max) {
-  let evenNumSum = 0;
-  for (let i = max; i >= min; i--) {
-    console.log(i);
-    if (i % 2 === 0) {
-      evenNumSum += i;
-    }
+// function logNumbers(min, max) {
+//   let total = 0;
+//   for (let i = max; i >= min; i--) {
+//     console.log(i);
+//     if (i % 2 === 0) {
+//       total += i;
+//     }
+//   }
+//   return total;
+// }
+// console.log(logNumbers(2, 6));
+
+// Напишіть функцію fizzBuzz яка приймає число
+//Якщо число ділитися на 3 повертати fizz
+//якщо ділитися на 5 повертати buzz
+//Якщо ділитися на 3 і на 5 повернути fizzbuzz
+
+function fizzBuzz(num) {
+  if (num % 3 === 0 && num % 5 === 0) {
+    return "fizzbuzz";
+  } else if (num % 5 === 0) {
+    return "buzz";
+  } else if (num % 3 === 0) {
+    return "fizz";
+  } else {
+    return num;
   }
-  return evenNumSum;
 }
-console.log(getEvenNumSum(9, 20));
+console.log(fizzBuzz(9));
