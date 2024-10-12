@@ -20,3 +20,31 @@ function findSmallerNumber(numbers) {
   return "Incoming parameter is not an array";
 }
 console.log(findSmallerNumber(numbers));
+//----------------------------------------------------------
+//Напишіть функцію getUniqueValues(arr), яка повертає масив,
+//якій містить лише унікальні елементи.
+const words = [
+  "HTML",
+  "CSS",
+  "JS",
+  "React",
+  "JS",
+  "CSS",
+  "JS",
+  "Node.js",
+  "JS",
+  "React",
+  "CSS",
+  "React",
+  "HTML",
+  "Node.js",
+];
+function getUniqueValues(arr){
+  let uniqe = [];
+  for (const value of arr) {
+    if (!uniqe.includes(value)){
+      uniqe.push(value);
+    }
+  } return uniqe;
+}
+console.log(getUniqueValues(words));
