@@ -112,3 +112,20 @@ const getUsersWithEyeColor = (users, color) =>
   users.filter((user) => user.eyeColor === color);
 
 console.log(getUsersWithEyeColor(users, "blue"));
+  // Отримати масив імен користувачів за статтю (поле gender)
+// console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+// const getUsersWithGender = ((users, currentGender) =>
+//   users.filter(user => user.gender === currentGender).map(user => user.name)
+// )
+const getUsersWithGender = ((users, currentGender) =>
+  users.reduce((newArr, user,) => {
+    console.log(newArr);
+    
+    if (user.gender === currentGender) {
+      newArr.push(user.name);
+    } 
+    return newArr;
+  },[]))
+
+
+console.log(getUsersWithGender(users, 'male'));
