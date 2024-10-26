@@ -140,4 +140,35 @@ function getSortedUniqueSkills(users) {
     .filter((skill, index, array) => array.indexOf(skill) === index)
     .toSorted();
 }
-console.log(getSortedUniqueSkills(users));
+// console.log(getSortedUniqueSkills(users));
+//Напиши клас Client який створює об'єкт
+//з ​​властивостями login email
+//Оголоси приватні властивості #login #email,
+//доступ до яких зроби через геттер та сеттер login email
+
+
+
+class Client {
+  #login;
+  #email;
+  constructor(login, email) {
+    this.#login = login;
+    this.#email = email;
+  }
+  
+  set email(newEmail) {
+    this.#email = newEmail;
+  }
+  get email() {
+    return this.#email;
+  }
+  set login(newLogin) {
+    this.#login = newLogin;
+  }
+  get login() {
+    return this.#login;
+  }
+}
+const client = new Client("UserLogin", "user@example.com");
+console.log(client.login); // UserLogin
+console.log(client.email); // user@example.com
