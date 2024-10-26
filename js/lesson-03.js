@@ -97,7 +97,7 @@ function getUserNames(arr) {
   //   return resultArr;
 }
 
-console.log(getUserNames(users));
+//console.log(getUserNames(users));
 
 // Отримати масив об'єктів користувачів за кольором очей (поле eyeColor).
 // console.log(getUsersWithEyeColor(users, 'blue')); // [об'єкт Moore Hensley, об'єкт Sharlene Bush, об'єкт Carey Barr]
@@ -111,21 +111,33 @@ console.log(getUserNames(users));
 const getUsersWithEyeColor = (users, color) =>
   users.filter((user) => user.eyeColor === color);
 
-console.log(getUsersWithEyeColor(users, "blue"));
-  // Отримати масив імен користувачів за статтю (поле gender)
+//console.log(getUsersWithEyeColor(users, "blue"));
+// Отримати масив імен користувачів за статтю (поле gender)
 // console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 // const getUsersWithGender = ((users, currentGender) =>
 //   users.filter(user => user.gender === currentGender).map(user => user.name)
 // )
-const getUsersWithGender = ((users, currentGender) =>
-  users.reduce((newArr, user,) => {
+const getUsersWithGender = (users, currentGender) =>
+  users.reduce((newArr, user) => {
     console.log(newArr);
-    
+
     if (user.gender === currentGender) {
       newArr.push(user.name);
-    } 
+    }
     return newArr;
-  },[]))
+  }, []);
 
+//console.log(getUsersWithGender(users, "male"));
 
-console.log(getUsersWithGender(users, 'male'));
+// Отримати масив всіх умінь всіх користувачів (поле skills), при цьому не повинно бути
+// Уміння, що повторюються, і вони повинні бути відсортовані в алфавітному порядку.
+// console.log(getSortedUniqueSkills(users));
+// ['adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit' , 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam']
+
+function getSortedUniqueSkills(users) {
+  return users
+    .flatMap((user) => user.skills)
+    .filter((skill, index, array) => array.indexOf(skill) === index)
+    .toSorted();
+}
+console.log(getSortedUniqueSkills(users));
