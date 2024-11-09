@@ -13,14 +13,44 @@
 // Після натискання кнопки "SWAP ME" здійснюється обмін вмістом між двома інпутами.
 // Ви можете натиснути на неї кілька разів або вручну змінити вміст інпутів.
 
-const leftInput = document.querySelector("#leftSwapInput");
-const rightInput = document.querySelector("#rightSwapInput");
-const swapBtn = document.querySelector("#swapButton");
+// const leftInput = document.querySelector("#leftSwapInput");
+// const rightInput = document.querySelector("#rightSwapInput");
+// const swapBtn = document.querySelector("#swapButton");
 
-swapBtn.addEventListener("click", swap);
+// swapBtn.addEventListener("click", swap);
 
-function swap() {
-  let leftVal = leftInput.value;
-  leftInput.value = rightInput.value;
-  rightInput.value = leftVal;
+// function swap() {
+//   let leftVal = leftInput.value;
+//   leftInput.value = rightInput.value;
+//   rightInput.value = leftVal;
+// }
+//---------------------------------------------------------------
+// Завдання 3
+// Кнопка "Приховати" ховає текст і замінює назву кнопки на
+// "Розкрити", при повторному натисканні текст знову стає доступним
+// і кнопка набуває початкового вигляду.
+// */
+
+const input = document.querySelector("#passwordInput");
+const btn = document.querySelector("#passwordButton");
+
+btn.addEventListener("click", handleClick);
+
+function handleClick() {
+
+  // console.log(input.type);
+  
+  if (input.type === "text") {
+    input.type = 'password';
+    btn.textContent = "Pозкрити";
+  } else {
+    input.type = 'text';
+    btn.textContent = "Приховати";
+  }
+
+
+
+
 }
+
+
