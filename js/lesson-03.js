@@ -146,8 +146,6 @@ function getSortedUniqueSkills(users) {
 //Оголоси приватні властивості #login #email,
 //доступ до яких зроби через геттер та сеттер login email
 
-
-
 class Client {
   #login;
   #email;
@@ -155,7 +153,7 @@ class Client {
     this.#login = login;
     this.#email = email;
   }
-  
+
   set email(newEmail) {
     this.#email = newEmail;
   }
@@ -172,3 +170,32 @@ class Client {
 const client = new Client("UserLogin", "user@example.com");
 console.log(client.login); // UserLogin
 console.log(client.email); // user@example.com
+
+//Повернути об'єкт у якому вказується кількість тегів
+const tweets = [
+  { id: "000", likes: 5, tags: ["js", "nodejs"] },
+  { id: "001", likes: 2, tags: ["html", "css"] },
+  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+  { id: "003", likes: 8, tags: ["css", "react"] },
+  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+];
+
+// {
+//   js: 3,
+//   nodejs: 3,
+//   html: 2,
+//   css: 2,
+//   react: 2
+// }
+
+function countTags(tweets) {
+  const arrTags = [];
+  tweets.forEach((tweet) => {
+    arrTags.push(...tweet.tags);
+    console.log(arrTags);
+  });
+  return arrTags;
+}
+
+countTags(tweets);
+console.log("Testing console output");
